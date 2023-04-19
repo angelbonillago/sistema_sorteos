@@ -7,7 +7,7 @@ Este sistema contiene un login de usuarios, CRUD de sorteos, premios, premios po
 Clona el repositorio
 
 ```bash
-git clone 
+git clone https://github.com/angelbonillago/sistema_sorteos.git
 ```
 
 ## Configuracion de la Base de datos

@@ -1,0 +1,21 @@
+services:
+  web:
+    build: ./dockerfile-php
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+    volumes:
+      - .:/var/www/html
+      
+  db:
+    build: ./dockerfile-mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 
+      MYSQL_DATABASE: ruleta
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 
+    volumes:
+      - .:/var/www/html

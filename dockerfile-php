@@ -1,0 +1,18 @@
+# Instalar Composer
+FROM  php:7.4-apache
+
+RUN apt-get update && \
+    apt-get install -y libpq-dev && \
+    docker-php-ext-install pdo pdo_mysql
+
+COPY . /var/www/html/
+
+# Activar módulos necesarios de Apache
+RUN a2enmod rewrite headers
+
+RUN a2enmod rewrite
+
+EXPOSE 80
+
+# Comando para iniciar el servidor Apache
+CMD ["apache2-foreground"]
